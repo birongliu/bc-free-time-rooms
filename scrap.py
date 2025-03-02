@@ -31,7 +31,7 @@ def deduplicate_schedule(days_times):
 
 def parse_days_times(days_times_str):
     if days_times_str == "--" or days_times_str == "Unknown":
-        return "Unknown"
+        return [{"day": "Unknown", "startTime": "Unknown", "endTime": "Unknown"}]
     
     # Split into different day-time combinations
     schedule = []
@@ -169,9 +169,9 @@ def scrape_cuny_classes():
 
                     classes_data.append(class_info)
 
-                    with open("courses.json", "a") as file:
-                        json.dump(class_info, file, indent=2)
-                        file.write('\n,')  # Add newline between entries
+                    with open("courses.json", "w") as file:
+                        json.dump(classes_data, file, indent=2)
+                    file.write("\n")
 
             except Exception as e:
                 print(f"An error occurred: {str(e)}")
