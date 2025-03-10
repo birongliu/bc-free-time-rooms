@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "discord.js": "^14.18.0",
-    "dotenv": "^16.4.7"
+    "dotenv": "^16.4.7",
+    "ollama": "^0.5.14"
   },
   "name": "bc-free-time-rooms",
   "description": "",
